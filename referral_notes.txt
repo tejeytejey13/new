@@ -1,0 +1,7 @@
+Frontend - PESO
+Employee - Job list, sign in, login, applied jobs,
+Employer - dashboard, jobs list, applied employee,
+PESO - pending and accepted employee and employers, account, transaction history,disable account, 
+	-Superadmin
+	-Admin
+	-User

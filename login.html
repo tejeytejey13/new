@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Public Employment Service Office | Login & Signup</title>
+      <link rel="icon" href="peso/PESO LOGO NEW.png">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <img src="peso/PESO LOGO NEW.png"  width="70px;"><h3>PESO JobPortal</h3>
+    </header>
+    <div class="space"></div> 
+    <div class="wrapper">
+      <div class="title-text">
+        
+      </div>
+      <div class="form-container">
+        <div class="slide-controls">
+          <input type="radio" name="slide" id="login" checked>
+          <input type="radio" name="slide" id="signup">
+          <label for="login" class="slide login">Login</label>
+          <label for="signup" class="slide signup">Signup</label>
+          <div class="slider-tab"></div>
+        </div>
+        <div class="form-inner">
+          <form action="#" class="login">
+            <div>
+              <h2>Account Log In</h2>
+              <p>Fill out the information below in order to access your account.</p>
+            </div>
+            <div class="field">
+              <select required>
+                <option value="" disabled selected hidden>--Select User Type--</option>
+                <option value="option1">Job Seeker</option>
+                <option value="option2">Employer</option>
+                <option value="option3">Admin</option>
+                <!-- Add more options as needed -->
+              </select>
+            </div>
+            
+            <div class="field">
+              <input type="text" placeholder="Email Address" required>
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Password" required>
+              <span class="toggle-password" onclick="togglePasswordVisibility()">
+                <i class="fas fa-eye"></i>
+              </span>
+            </div>
+            
+          
+            <div class="pass-link"><a href="#">Forgot password?</a></div>
+            <div class="field btn">
+              <div class="btn-layer"></div>
+              <input type="submit" value="Login">
+            </div>
+           
+          </form>
+          <form action="#" class="signup">
+            <div>
+              <h2>Create Account</h2>
+              <p>Let's get started by filling out the form below.</p>
+            </div>
+            <div class="field">
+              <select required>
+                <option value="" disabled selected hidden>--Select User Type--</option>
+                <option value="option1">Job Seeker</option>
+                <option value="option2">Employer</option>
+                <option value="option3">Admin</option>
+                <!-- Add more options as needed -->
+              </select>
+            </div>
+            <div class="field">
+              <input type="text" placeholder="First Name" required>
+            </div>
+            <div class="field">
+              <input type="text" placeholder="Last Name" required>
+            </div>
+            <div class="field">
+              <input type="text" placeholder="Email Address" required>
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Password" required>
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Confirm Password" required>
+            </div>
+            <div class="checkbox-container">
+              <input type="checkbox" id="myCheckbox">
+              <label for="myCheckbox">I agree to the <a href="#">Terms and Conditions</a></label>
+            </div>
+            <div class="field btn">
+              <div class="btn-layer"></div>
+              <input type="submit" value="Signup">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div> <div class="space"></div> 
+
+    <footer class="footer">
+      <div class="row">
+      <div class="column">
+          <h4>Job Seekers</h4>
+          <p><a href="#">Job Search</a></p>
+          <p><a href="#">Profile</a></p>
+          <p><a href="#">Recommended jobs</a></p>
+          <p><a href="#">Job Applications</a></p>            
+      </div>
+      <div class="column">
+          <h4>Employers</h4>
+          <p><a href="#">Register for free</a></p>
+          <p><a href="#">Post a Job ad</a></p>
+          <p><a href="#">Customer Service</a></p> 
+      </div>
+      <div class="column">
+          <h4>About PESO Gensan</h4>
+          <p><a href="#">About Us</a></p>
+          <p><a href="#">Partner Services</a></p>
+      </div>
+      <div class="column">
+          <h4>Contact</h4>
+          <p><a href="#">Help Centre</a></p>
+          <p><a href="#">Contact Us</a></p>
+      </div>
+      </div>
+      <div class="line"></div>
+      <div class="row">
+          <!-- Footer links and copyright text -->
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Safe Job Search Guide</a>
+          </div>
+          <div class="copyright">
+            <p>Copyright &copy; 2024 PESO JobPortal</p>
+          </div>
+        </div>
+    </footer>
+    
+
+    <script>
+      const loginText = document.querySelector(".title-text .login");
+      const loginForm = document.querySelector("form.login");
+      const loginBtn = document.querySelector("label.login");
+      const signupBtn = document.querySelector("label.signup");
+      const signupLink = document.querySelector("form .signup-link a");
+      signupBtn.onclick = (()=>{
+        loginForm.style.marginLeft = "-50%";
+        loginText.style.marginLeft = "-50%";
+      });
+      loginBtn.onclick = (()=>{
+        loginForm.style.marginLeft = "0%";
+        loginText.style.marginLeft = "-50%";
+      });
+      signupLink.onclick = (()=>{
+        signupBtn.click();
+        return false;
+      });
+
+    </script>
+
+  </body>
+</html>
