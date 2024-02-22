@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+     
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="assets/css/styles.css">
+      <link rel="stylesheet" href="assets/css/dashboard.css">
+      <link rel="stylesheet" href="assets/css/cards.css">
+      <link rel="stylesheet" href="assets/css/material-symbol.css">
+      <link rel="stylesheet" href="assets/css/material-icon.css">
+      
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <script src=" https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src=" https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script>
+ 
+      <title>Public Employment Service Office | PESO-Gensan</title>
+      <link rel="icon" href="peso/PESO LOGO NEW.png">
+   </head>
+<style>
+ 
+</style>
+   <body>
+    
+    
+       
+   <!-- Header and navigation content -->
+      <!--=============== HEADER ===============-->
+      <header class="header" id="header">
+        <nav class="nav container">
+           <div class="nav__data">
+               <a href="jobseeker.html" class="nav__logo">
+               <img src="peso/PESO LOGO NEW.png"  width="50px;"><h3>PESO JobPortal</h3>
+              </a>
+              
+              <div class="nav__toggle" id="nav-toggle">
+                 <i class="ri-menu-line nav__burger"></i>
+                 <i class="ri-close-line nav__close"></i>
+              </div>
+           </div>
+
+           <!--=============== NAV MENU ===============-->
+           <div class="nav__menu" id="nav-menu">
+              <ul class="nav__list">
+               <li><a href="employer.html" class="nav__link">Home</a></li>
+
+                 <li><a href="employer_jobsearch.html" class="nav__link">Job Posts</a></li>
+
+                 <li><a href="employer_dashboard.html" class="nav__link">Employer</a></li>
+
+                <!--=============== DROPDOWN 1 ===============-->
+                <li class="dropdown__item">
+                 <div class="nav__link">
+                    User's Guide<i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                 </div>
+
+                 <ul class="dropdown__menu">
+                  
+                    <li>
+                       <a href="#" class="dropdown__link">
+                         <i class="ri-briefcase-line"></i> Employers
+                       </a>
+                    </li>
+                 </ul>
+              </li> 
+
+                <!--=============== DROPDOWN 2 ===============-->
+                <li class="dropdown__item">
+                 <div class="nav__link">
+                    Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                 </div>
+
+                 <ul class="dropdown__menu">
+                   
+                    <li>
+                       <a href="employer_account.html" class="dropdown__link">
+                          <i class="ri-lock-line"></i> Accounts
+                       </a>
+                    </li>
+
+                    <li>
+                       <a href="index.html" class="dropdown__link">
+                         <i class="ri-logout-box-r-line"></i>Logout
+                       </a>
+                    </li>
+                 </ul>
+              </li> 
+                 <li><a href="#" class="nav__link">About</a></li>
+                   <!-- Buttons added here -->
+                    <!-- <li><a href="login.html" target="_blank"><button class="nav__button">LOGIN</button></a></li>-->
+              </ul>
+           </div>
+        </nav>
+     </header>
+ 
+      <!-- ====================== START DASHBOARD =======================-->
+      <div class="container1">
+         <div class="sidebar">
+             <h2>Employer</h2>
+             <ul>
+                 <li><a href="#dashboard">Dashboard</a></li>
+                 <li><a href="#applications">View Applications</a></li>
+                 <li><a href="#jobposts">Job Posts</a></li>
+                 <li><a href="#referrals">Referrals</a></li>
+                 <li><a href="#hired">Hired</a></li>
+                 <li><a href="#notifications">Notifications<span class="notification-badge">2</span></a></li>
+
+             </ul>
+         </div>
+         <div class="content">
+             <div id="dashboard">
+                 <h2>Dashboard</h2>
+                 <div class="main-cards">
+                   <!-- ====================== CARD 1 =======================-->
+                  <div class="card">
+                    <a href="#" class="links" title="More Details">
+                      <div class="card-inner">
+                        <p class="text-primary">NO. OF HIRED APPLICANTS</p>
+                          <span class="material-symbols-outlined text-gray">create_new_folder</span>
+                      </div>
+                          <span class="text-primary font-weight-bold">24</span>
+                    </a>
+                  </div>
+                  <!-- ====================== CARD 2 =======================-->
+                  <div class="card">
+                    <a href="#" class="links" title="More Details">
+                      <div class="card-inner">
+                        <p class="text-primary">NO. OF POSTED VACANCIES</p>
+                        <span class="material-symbols-outlined text-green">folder</span>
+                      </div>
+                        <span class="text-primary font-weight-bold">83</span>
+                    </a>
+                  </div>
+                  <!-- ====================== CARD 3 =======================-->
+                  <div class="card">
+                    <a href="#" class="links" title="More Details">
+                      <div class="card-inner">
+                        <p class="text-primary">NO. OF APPLICANTS</p>
+                        <span class="material-symbols-outlined text-orange">folder_open</span>
+                      </div>
+                        <span class="text-primary font-weight-bold">79</span>
+                    </a>
+                  </div>
+                  <!-- ====================== CARD 4 =======================-->
+                  <div class="card">
+                    <a href="#" class="links" title="More Details">
+                      <div class="card-inner">
+                        <p class="text-primary">NO. OF APPLICANTS AVAILABLE</p>
+                        <span class="material-symbols-outlined text-blue">topic</span>
+                      </div>
+                        <span class="text-primary font-weight-bold">100</span>
+                    </a>
+                  </div>
+    
+              
+    
+            </div>
+             </div>
+<!-- ====================== END DASHBOARD =======================-->
+             
+
+      <!-- ====================== NOTIFICATIONS =======================-->
+          
+      <div id="notifications" style="display: none;">
+        <h2>Notifications</h2>
+        <div class="notificationtbl">
+        <table>
+          <thead>
+            <tr>
+                <th colspan="2">Recent</th>
+            </tr>
+        </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="notification">
+                  <div class="logo">
+                    <img src="peso/PESO LOGO NEW.png" alt="Logo">
+                  </div>
+                  <div class="notificationcontent">
+                    <div class="header1">
+                      <div>
+                        <h3>PESO - Admin</h3>
+                        <h4>Referral Slip</h4>
+                      </div>
+                      <span class="time">21m ago</span>
+                    </div>
+                    <p class="message">PESO-Gensan released your Referral Slip for the job "Website Builder"</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="notification">
+                  <div class="logo">
+                    <img src="peso/PESO LOGO NEW.png" alt="Logo">
+                  </div>
+                  <div class="notificationcontent">
+                    <div class="header1">
+                      <div>
+                        <h3>PESO - Admin</h3>
+                        <h4>Referral Slip</h4>
+                      </div>
+                      <span class="time">21m ago</span>
+                    </div>
+                    <p class="message">PESO-Gensan released your Referral Slip for the job "Website Builder"</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <thead>
+              <tr>
+                  <th colspan="2">Old</th>
+              </tr>
+          </thead>
+            <tr>
+              <td colspan="2">
+                <div class="notification">
+                  <div class="logo">
+                    <img src="peso/PESO LOGO NEW.png" alt="Logo">
+                  </div>
+                  <div class="notificationcontent">
+                    <div class="header1">
+                      <div>
+                        <h3>PESO - Admin</h3>
+                        <h4>NSRP Form</h4>
+                      </div>
+                      <span class="time">2 days ago</span>
+                    </div>
+                    <p class="message">Paki fill-out sa imong form. Salamat</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <div class="notification">
+                  <div class="logo">
+                    <img src="peso/PESO LOGO NEW.png" alt="Logo">
+                  </div>
+                  <div class="notificationcontent">
+                    <div class="header1">
+                      <div>
+                        <h3>PESO - Admin</h3>
+                        <h4>NSRP Form</h4>
+                      </div>
+                      <span class="time">2 days ago</span>
+                    </div>
+                    <p class="message">Paki fill-out sa imong form. Salamat</p>
+                  </div>
+                </div>
+              </td>
+            </tr>  
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+      <!-- ====================== END NOTIFICATIONS =======================-->
+
+
+<!-- ====================== START VIEW APPLICATIONS =======================-->
+             <div id="applications" style="display: none;">
+                 <h2>View Applications</h2>
+                 <div class="table-container">
+                  <table id="dashboardjobs" class="display" style="width:100%">
+                   <thead>
+                       <tr>
+                           <th>Applicants</th>
+                           <th>Job Title/Position</th>
+                           <th>Date Applied</th>
+                           <th>Status</th>
+                           <th>Actions</th>
+                       </tr>
+                       
+                   </thead>
+                   <tbody>
+                    
+                      <tr>
+                         <td>Juan Dela Cruz</td>
+                         <td>Software Engineer</td>
+                         <td>04-20-24</td>
+                         <td>Applied</td>
+                         <td>
+                            <button class="view-user" id="openModalBtn"><i class="fas fa-user"></i></button>
+                             <!--  <button class="view-button" id="openModalBtn"><i class="fas fa-eye"></i></button>-->
+                             <button class="cancel-button"><i class="fas fa-times"></i></button>
+                         </td>
+                       </tr>
+                       <tr>
+                        <td>Juan Dela Cruz</td>
+                        <td>Software Engineer</td>
+                        <td>04-20-24</td>
+                        <td>Applied</td>
+                        <td>
+                           <button class="view-user"><i class="fas fa-user"></i></button>
+                            <!--  <button class="view-button" id="openModalBtn"><i class="fas fa-eye"></i></button>-->
+                            <button class="cancel-button"><i class="fas fa-times"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Juan Dela Cruz</td>
+                        <td>Software Engineer</td>
+                        <td>04-20-24</td>
+                        <td>Applied</td>
+                        <td>
+                           <button class="view-user"><i class="fas fa-user"></i></button>
+                            <!--  <button class="view-button" id="openModalBtn"><i class="fas fa-eye"></i></button>-->
+                            <button class="cancel-button"><i class="fas fa-times"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Juan Dela Cruz</td>
+                        <td>Software Engineer</td>
+                        <td>04-20-24</td>
+                        <td>Applied</td>
+                        <td>
+                           <button class="view-user"><i class="fas fa-user"></i></button>
+                            <!--  <button class="view-button" id="openModalBtn"><i class="fas fa-eye"></i></button>-->
+                            <button class="cancel-button"><i class="fas fa-times"></i></button>
+                        </td>
+                      </tr>
+                       
+                   </tbody>
+               </table>
+               <!-- The Modal -->
+              <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <div class="logo">
+                    <i class="fas fa-user fa-5x"></i> <!-- Changed img tag to i tag with Font Awesome classes -->
+                </div>
+                  <div class="modal-text">
+                    <h2>Juan Dela Cruz</h2>
+                    <p>Education: Bachelor of Science in Information Technology</p>
+                    <p>Last Work/Job: Computer Programmer</p>
+                  </div>
+                  <div class="button-row">
+                    <a href="#"><button class="view-button1"><i class="fas fa-user"></i> View Profile</button></a>
+                    <a href="#"><button class="view-button1"><i class="fas fa-info-circle"></i> More Information</button></a>
+                  </div>
+                </div>
+              </div>
+               <!-- End Modal -->
+                </div>
+             </div>
+             <!-- ====================== END MY APPLICATIONS =======================-->
+
+
+             <!-- ====================== START JOB POSTS =======================-->
+             <div id="jobposts" style="display: none;">
+              <h2>Job Posts <button class="add-button" id="openModalBtnjob"><i class="fas fa-plus"></i></button></h2>
+              <div class="table-container">
+               <table id="dashboardjobposts" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Job ID</th>
+                        <th>Job Title/Position</th>
+                        <th>Vacancies</th>
+                        <th>Applicants</th>
+                        <th>Hired</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                 
+                   <tr>
+                      <td>SE2424</td>
+                      <td>Software Engineer</td>
+                      <td>4</td>
+                      <td>--</td>
+                      <td>0</td>
+                      <td>Posted</td>
+                      <td>
+                          <button class="view-button"><i class="fas fa-eye"></i> View</button>
+                          <button class="cancel-button"><i class="fas fa-times"></i> Cancel</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>SE2424</td>
+                      <td>Software Engineer</td>
+                      <td>4</td>
+                      <td>--</td>
+                      <td>0</td>
+                      <td>Posted</td>
+                      <td>
+                          <button class="view-button"><i class="fas fa-eye"></i> View</button>
+                          <button class="cancel-button"><i class="fas fa-times"></i> Cancel</button>
+                      </td>
+                    </tr>
+                </tbody>
+            </table>
+           <!-- The Modal -->
+           <div id="myModaljob" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="closejob">&times;</span>
+              <div class="custom-logo">
+                <select class="custom-dropdown">
+                    <option value="Juan Dela Cruz">Select Industry</option>
+                    <option value="Another Option">Another Option</option>
+                    <option value="Yet Another Option">Yet Another Option</option>
+                </select>
+             </div>
+            
+              <div class="custom-modal-text">
+                  <input type="text" class="custom-text-field" placeholder="Job Title/Name" required>
+                  <div class="custom-input-group">
+                    <input type="text" class="custom-text-row" placeholder="Salary Range Min" required>
+                    <input type="text" class="custom-text-row" placeholder="Salary Range Max" required>
+                    <input type="text" class="custom-text-row" placeholder="No. of Vacancies" required>
+                  </div>
+                  <div class="expandable-text-field">
+                    <textarea class="custom-text-area" placeholder="Job Description"></textarea>
+                  </div>
+              </div>
+
+              <div class="custom-logo">
+                <select class="custom-dropdown">
+                    <option value="Juan Dela Cruz">Select Status</option>
+                    <option value="Another Option">Another Option</option>
+                    <option value="Yet Another Option">Yet Another Option</option>
+                </select>
+             </div>
+            
+            
+              <div class="button-row">
+                <a href="#"><button class="view-button1"><i class="fas fa-user"></i> Save</button></a>
+                <a href="#"><button class="view-button1"><i class="fas fa-info-circle"></i> Close</button></a>
+              </div>
+            </div>
+          </div>
+           <!-- End Modal -->
+             </div>
+          </div>
+          <!-- ====================== END JOB POSTS =======================-->
+
+
+
+          <!-- ====================== START REFERRALS =======================-->
+          <div id="referrals" style="display: none;">
+            <h2>Refferals</h2>
+            <div class="table-container">
+             <table id="dashboardrefer" class="display" style="width:100%">
+              <thead>
+                  <tr>
+                      <th>Job ID</th>
+                      <th>Job Title/Position</th>
+                      <th>Vacancies</th>
+                      <th>Applicants</th>
+                      <th>Hired</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                  </tr>
+                  
+              </thead>
+              <tbody>
+               
+                 <tr>
+                    <td>SE2424</td>
+                    <td>Software Engineer</td>
+                    <td>4</td>
+                    <td>--</td>
+                    <td>0</td>
+                    <td>Posted</td>
+                    <td>
+                        <button class="view-button"><i class="fas fa-eye"></i> View</button>
+                        <button class="cancel-button"><i class="fas fa-times"></i> Cancel</button>
+                    </td>
+                  </tr>
+                
+              </tbody>
+          </table>
+         
+           </div>
+        </div>
+        <!-- ====================== END REFERRALS =======================-->
+
+
+
+        <!-- ====================== START HIRED =======================-->
+        <div id="hired" style="display: none;">
+          <h2>Hired</h2>
+          <div class="table-container">
+            <table id="dashboardhired" class="display" style="width:100%">
+             <thead>
+                 <tr>
+                     <th>Applicants</th>
+                     <th>Job Title/Position</th>
+                     <th>Date Applied</th>
+                     <th>Status</th>
+                     <th>Actions</th>
+                 </tr>
+                 
+             </thead>
+             <tbody>
+              
+                <tr>
+                   <td>Juan Dela Cruz</td>
+                   <td>Software Engineer</td>
+                   <td>04-20-24</td>
+                   <td>Hired</td>
+                   <td>
+                      <button class="view-user"><i class="fas fa-user"></i></button>
+                       <!--  <button class="view-button" id="openModalBtn"><i class="fas fa-eye"></i></button>-->
+                       <button class="cancel-button"><i class="fas fa-times"></i></button>
+                   </td>
+                 </tr>
+                 
+                 
+             </tbody>
+         </table>
+         
+          </div>
+      </div>
+      <!-- ====================== END HIRED =======================-->
+         </div>
+     </div>
+    
+        
+     
+<!-- ====================== START MY APPLICATIONS =======================-->
+             <div id="applications" style="display: none;">
+                 <h2>My Applications</h2>
+                 <div class="table-container">
+                  <table id="dashboardjobs" class="display" style="width:100%">
+                   <thead>
+                       <tr>
+                           <th>Job Title/Position</th>
+                           <th>Company</th>
+                           <th>Job Match</th>
+                           <th>Date Interview</th>
+                           <th>Date Hired</th>
+                           <th>Status</th>
+                           <th>Actions</th>
+                       </tr>
+                       
+                   </thead>
+                   <tbody>
+                    
+                      <tr>
+                        <td>Software Engineer</td>
+                        <td>ABC Company</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                        <td>2024-01-15</td>
+                        <td>Offer Accepted</td>
+                        <td>
+                            <button class="view-button"><i class="fas fa-eye"></i> View</button>
+                            <button class="cancel-button"><i class="fas fa-times"></i> Cancel</button>
+                        </td>
+                      </tr>
+                     
+                   </tbody>
+               </table>
+              
+                </div>
+             </div>
+         </div>
+     </div>
+     <!-- ====================== END MY APPLICATIONS =======================-->
+
+
+
+
+    <footer class="footer">
+        <div class="row">
+        <div class="column">
+            <h4>Job Seekers</h4>
+            <p><a href="#">Job Search</a></p>
+            <p><a href="#">Profile</a></p>
+            <p><a href="#">Recommended jobs</a></p>
+            <p><a href="#">Job Applications</a></p>            
+        </div>
+        <div class="column">
+            <h4>Employers</h4>
+            <p><a href="#">Register for free</a></p>
+            <p><a href="#">Post a Job ad</a></p>
+            <p><a href="#">Customer Service</a></p> 
+        </div>
+        <div class="column">
+            <h4>About PESO Gensan</h4>
+            <p><a href="#">About Us</a></p>
+            <p><a href="#">Partner Services</a></p>
+        </div>
+        <div class="column">
+            <h4>Contact</h4>
+            <p><a href="#">Help Centre</a></p>
+            <p><a href="#">Contact Us</a></p>
+        </div>
+        </div>
+        <div class="line"></div>
+        <div class="row">
+            <!-- Footer links and copyright text -->
+            <div class="footer-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms & Conditions</a>
+              <a href="#">Safe Job Search Guide</a>
+            </div>
+            <div class="copyright">
+              <p>Copyright &copy; 2024 PESO JobPortal</p>
+            </div>
+          </div>
+      </footer>
+      
+  
+  
+      <!--=============== MAIN JS ===============-->
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+      <script>
+       // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("openModalBtn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("closejob")[0];
+
+      // When the user clicks the button, open the modal
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+
+
+
+
+
+
+
+       // Get the modal
+       var modal = document.getElementById("myModaljob");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModalBtnjob");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+
+
+      </script>
+      <script>
+         // JavaScript to handle page navigation
+         document.querySelectorAll('.sidebar ul li a').forEach(link => {
+             link.addEventListener('click', function(event) {
+                 event.preventDefault();
+                 const targetId = this.getAttribute('href').substring(1);
+                 document.querySelectorAll('.content > div').forEach(page => {
+                     page.style.display = 'none';
+                 });
+                 document.getElementById(targetId).style.display = 'block';
+             });
+         });
+     </script>
+   <script>
+    $(document).ready(function() {
+      $('#dashboardjobs').DataTable({
+        fixedColumns: {
+        start: 1,
+        end: 1
+    },
+    
+        dom: 'Bfrtip',
+        buttons: [
+          
+          'colvis',
+          {
+            extend: 'pageLength',
+          },
+
+
+        ]
+      });
+    });
+    $(document).ready(function() {
+      $('#dashboardjobposts').DataTable({
+        fixedColumns: {
+        start: 1,
+        end: 1
+    },
+    
+        dom: 'Bfrtip',
+        buttons: [
+          
+          'colvis',
+          {
+            extend: 'pageLength',
+          },
+
+
+        ]
+      });
+    });
+    $(document).ready(function() {
+      $('#dashboardrefer').DataTable({
+        fixedColumns: {
+        start: 1,
+        end: 1
+    },
+    
+        dom: 'Bfrtip',
+        buttons: [
+          
+          'colvis',
+          {
+            extend: 'pageLength',
+          },
+
+
+        ]
+      });
+    });
+    $(document).ready(function() {
+      $('#dashboardhired').DataTable({
+        fixedColumns: {
+        start: 1,
+        end: 1
+    },
+    
+        dom: 'Bfrtip',
+        buttons: [
+          
+          'colvis',
+          {
+            extend: 'pageLength',
+          },
+
+
+        ]
+      });
+    });
+  </script>
+
+   </body>
+</html>

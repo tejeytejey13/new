@@ -1,0 +1,610 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+  
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --black-color: #171c26;
+    --black-color-light: hsl(220, 24%, 15%);
+    --black-color-lighten: hsl(220, 20%, 18%);
+    --white-color: #fff;
+    --body-color: #fff;
+  
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Montserrat", sans-serif;
+    --normal-font-size: .938rem;
+  
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-semi-bold: 600;
+  
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+  }
+body, html {
+    font-family: var(--body-font);
+    margin: 0;
+    padding: 0;
+}
+h3{
+    font-size: 19px;
+}
+/* Default styles */
+.container1 {
+    width: 98%;
+    display: flex;
+    margin: 20px auto;
+    justify-content: center;
+}
+.sidebar {
+    border-radius: 10px;
+    width: 200px;
+    height: 500px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+    position: relative; /* Position the notification badge relative to the list item */
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+    position: relative; /* Position the notification badge relative to the anchor */
+}
+
+.notification-badge {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 6px;
+    font-size: 12px;
+    position: absolute;
+    top: -8px;
+    right: -25px;
+}
+
+
+.content {
+    border-radius: 10px;
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Media Query for small screens */
+@media only screen and (max-width: 768px) {
+    .container1 {
+        flex-direction: column; /* Change flex direction to column */
+        align-items: center; /* Align items at the center vertically */
+    }
+
+    .sidebar {
+        width: 100%; /* Allow the sidebar to adjust its width */
+        height: auto; /* Allow the sidebar to adjust its height */
+        margin-bottom: 20px; /* Add margin to separate it from the table */
+    }
+
+    .content {
+        width: 100%; /* Ensure content takes full width */
+    }
+}
+/* Media Query for small screens */
+@media only screen and (max-width: 1136px) {
+    .container1 {
+        flex-direction: column; /* Change flex direction to column */
+        align-items: center; /* Align items at the center vertically */
+    }
+
+    .sidebar {
+        width: 100%; /* Allow the sidebar to adjust its width */
+        height: auto; /* Allow the sidebar to adjust its height */
+        margin-bottom: 20px; /* Add margin to separate it from the table */
+    }
+
+    .content {
+        width: 100%; /* Ensure content takes full width */
+    }
+}
+
+
+/* Container for the table with overflow */
+.table-container {
+    max-height: 390px; /* Adjust the max-height as needed */
+    overflow: auto;
+    margin-top: 10px;
+}
+
+/*================TABLE================*/
+.content table {
+    margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+}
+thead {
+    position: sticky;
+    top: 0;
+    z-index: 1; /* Ensure it's above other content */
+    background-color: #fff; /* Optional: Set background color to match table background */
+}
+.content th, .content td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-weight: 500;
+}
+
+.content th {
+    background-color: #333;
+    color: #fff;
+}
+
+.content tbody {
+    padding: 30px; /* Add padding to the tbody */
+}
+
+.content tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.content td:last-child {
+    text-align: center;
+}
+
+.view-button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.view-button:hover {
+    background-color: #0056b3;
+}
+.view-user {
+    padding: 5px 10px;
+    background-color: #07930b;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.view-user:hover {
+    background-color: #004108;
+}
+
+.cancel-button {
+    padding: 5px 10px;
+    background-color: #cc0d1d;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.cancel-button:hover {
+    background-color: #780505;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* Adjust padding for table cells */
+#dashboardjobs td {
+    padding: 5px 5px; /* Adjust the padding as needed */
+}
+#dashboardjobs thead th {
+    text-align: center;
+}
+/* Adjust padding for table cells */
+#dashboardrefer td {
+    padding: 5px 5px; /* Adjust the padding as needed */
+}
+#dashboardrefer thead th {
+    text-align: center;
+}
+/* Adjust padding for table cells */
+#dashboardhired td {
+    padding: 5px 5px; /* Adjust the padding as needed */
+}
+#dashboardhired thead th {
+    text-align: center;
+}
+#dashboardjobposts td {
+    padding: 25px 5px; /* Adjust the padding as needed */
+}
+#dashboardjobposts thead th {
+    text-align: center;
+}
+/* Adjust padding for table headers */
+#dashboardjobs th {
+    padding: 10px; /* Adjust the padding as needed */
+}
+
+#dashboardjobs th:nth-child(7),
+#dashboardjobs td:nth-child(7) {
+    width: 100px; /* Adjust the width as needed */
+}
+
+#dashboardrefer th:nth-child(7),
+#dashboardrefer td:nth-child(7) {
+    width: 100px; /* Adjust the width as needed */
+}
+/* Adjust padding for table cells */
+#dashboardjobposts td {
+    padding: 5px 5px; /* Adjust the padding as needed */
+}
+
+/* Adjust padding for table headers */
+#dashboardjobposts th {
+    padding: 10px; /* Adjust the padding as needed */
+}
+
+#dashboardjobposts th:nth-child(7),
+#dashboardjobposts td:nth-child(7) {
+    width: 100px; /* Adjust the width as needed */
+}
+.add-button {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.add-button:hover {
+    background-color: darkgreen;
+}
+/* Close Button JOb */
+.closejob {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closejob:hover,
+.closejob:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+}
+
+/* Remove the styling for .logo img */
+
+.logo {
+    text-align: center; /* Center the icon */
+}
+
+/* Add styles for the .logo i tag */
+.logo i {
+    font-size: 100px; /* Adjust the icon size as needed */
+    margin: 20px auto; /* Adjust margin as needed */
+    color: #171c26; /* Adjust icon color */
+}
+
+.modal-text {
+    text-align: center;
+}
+
+.button-row {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.view-button1 {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #171c26;
+    color: white;
+}
+.save-button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .save-button:hover {
+    background-color: rgb(0, 55, 0);
+  }
+  .close-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .close-button:hover{
+    background-color: rgb(134, 0, 0);
+  }
+/* Style for the input group */
+.custom-input-group {
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Align items with equal space between them */
+    margin-bottom: 10px; /* Add margin at the bottom */
+}
+
+/* Style for text fields */
+.custom-text-row {
+    font-family: var(--body-font);
+    flex: 1; /* Distribute remaining space equally among text fields */
+    padding: 10px;
+    margin-right: 5px; /* Add spacing between text fields */
+    border: 1px solid #9a9a9a;
+    background-color: transparent; /* Transparent background */
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Style for the expandable text field container */
+.expandable-text-field {
+    margin-top: 10px; /* Add some space between the input fields and the expandable text field */
+}
+
+/* Style for the textarea */
+.custom-text-area {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #9a9a9a;
+    background-color: transparent; /* Transparent background */
+    border-radius: 5px;
+    font-family: var(--body-font);
+    box-sizing: border-box; /* Include padding in width calculation */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+/* Style for text fields */
+.custom-text-field {
+    font-family: var(--body-font);
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #9a9a9a;
+    background-color: transparent; /* Transparent background */
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Style for the dropdown */
+.custom-dropdown {
+    font-family: var(--body-font);
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid  #9a9a9a;
+    background-color: transparent; /* Transparent background */
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Style for the logo container */
+.custom-logo {
+    text-align: center; /* Center the content */
+    margin-bottom: 20px; /* Add margin for separation */
+}
+
+.custom-modal-text {
+    text-align: center; /* Center the content */
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+    .custom-input-group {
+        flex-wrap: wrap; /* Allow flex items to wrap */
+    }
+
+    .custom-text-row {
+        flex: 1 1 calc(100% - 10px); /* Equal width for text fields, minus margin */
+        margin-right: 0; /* Remove right margin for last row */
+        margin-bottom: 10px; /* Add bottom margin */
+    }
+}
+
+
+
+/* Responsive layout - when the screen size is less than 600px wide, make the buttons display in two rows */
+@media screen and (max-width: 600px) {
+    .modal-content {
+        width: 80%; /* Adjust the width for smaller screens */
+        margin: 35% auto; /* 15% from the top and centered */
+    }
+    .button-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .view-button1 {
+        margin: 5px 0;
+    }
+}
+
+
+
+/* Media Query for small screens */
+@media only screen and (max-width: 768px) {
+    /* Adjust the table container to be scrollable horizontally only */
+    .table-container {
+        overflow-x: auto; /* Add overflow-x for small screens */
+        overflow-y: auto; /* Hide vertical overflow */
+        position: relative; /* Add position relative */
+    }
+    
+    /* Reset table rows to default display */
+    .content tbody tr {
+        display: table-row; /* Reset to default display */
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 0; /* Reset margin */
+    }
+
+    /* Reset table cells to default display */
+    .content td {
+        display: table-cell; /* Reset to default display */
+        text-align: center; /* Reset text alignment */
+    }
+
+    /* Show table headers on small screens */
+    .content th {
+        display: table-cell; /* Reset to default display */
+    }
+
+    /* Reset button margins */
+    .content td .view-button,
+    .content td .cancel-button {
+        margin-bottom: 0; /* Reset margin */
+    }
+    
+    /* Make action buttons sticky */
+    .content td:last-child {
+        position: sticky;
+        right: 0;
+        background-color:  #f4f4f4; /* Adjust as needed */
+    }
+    
+    /* Change text of the cancel application button */
+    .content td .cancel-button {
+        font-size: 0; /* Hide original text */
+    }
+    .content td .cancel-button::after {
+        content: "Cancel"; /* Add new text */
+        font-size: 12px; /* Adjust font size */
+    }
+
+    /* Make the action column sticky */
+    .action-column {
+        position: sticky;
+        right: 0;
+        background-color: #f4f4f4;
+        z-index: 1;
+    }
+}
+
+
+
+.notificationcontent div {
+    text-align: left;
+}
+
+.notification {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.notification:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+.logo {
+    margin-right: 20px;
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+}
+
+.notificationcontent {
+    flex: 1;
+}
+
+.header1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header1 h3,
+.header1 h4 {
+    margin: 0;
+}
+
+.message {
+    margin: 5px 0;
+    color: #555;
+    text-align: left;
+}
+
+.time {
+    color: #999;
+}
+.notificationtbl {
+    max-height: 430px; /* Adjust the maximum height as needed */
+    overflow-y: auto; /* Add vertical scrollbar when content exceeds the maximum height */
+    position: relative; /* Ensure the table container has a relative position */
+}
+
+.notificationtbl table thead th {
+    position: sticky;
+    top: 0;
+
+    z-index: 1; /* Optional: Ensure the sticky header is above other content */
+}
+

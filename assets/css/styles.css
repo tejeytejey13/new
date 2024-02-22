@@ -11,7 +11,7 @@
   --black-color-light: hsl(220, 24%, 15%);
   --black-color-lighten: hsl(220, 20%, 18%);
   --white-color: #fff;
-  --body-color: hsl(220, 100%, 97%);
+  --body-color: #fff;
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -190,6 +190,8 @@ a {
   width: 400px; /* Set width to 100% for responsiveness */
   height: 60px;
   max-width: 400px; /* Limit maximum width */
+  border: 2px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border radius */
 }
 
 .search-box i {
@@ -203,6 +205,7 @@ a {
   background: none;
   flex: 1;
 }
+
 
 /* Button styles */
 .searchbtn button {
@@ -243,7 +246,7 @@ a {
 
 /*=============== HEADER ===============*/
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -252,6 +255,7 @@ a {
   z-index: var(--z-fixed);
   transition: background-color 0.3s ease; /* Smooth transition */
 }
+
 
 /*=============== NAV ===============*/
 .nav {
@@ -720,7 +724,7 @@ text-align: center; /* Horizontally center text */
 }
 
 .card {
-  width: 290px;
+  width: 300px;
   margin: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -755,29 +759,122 @@ text-align: center; /* Horizontally center text */
   font-size: 1.1rem;
   margin-bottom: 10px;
 }
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .card {
+    width: calc(50% - 40px); /* Adjust card width for smaller screens */
+  }
+}
+/* Media query for responsiveness */
+@media screen and (max-width: 560px) {
+  .card {
+    width: calc(100% - 40px); /* Adjust card width for smaller screens */
+  }
+}
+/* Media query for responsiveness */
+@media screen and (max-width: 596px) {
+  .card {
+    width: calc(100% - 40px); /* Adjust card width for smaller screens */
+  }
+}
+@media screen and (max-width: 480px) {
+  .card {
+    width: calc(100% - 40px); /* Adjust card width for even smaller screens */
+  }
+}
+
+
+
+/*============== QUICK STATS ====================*/
+.quick-stats {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: flex-end; /* Align items at the bottom */
+  background-color: #f5f5f5;
+  padding: 70px;
+  border-radius: 10px;
+  width: 80%; /* Set width to 80% */
+  margin: 0 auto; /* Center the container */
+  margin-top: 40px; /* Add margin-top */
+  gap: 10px; /* Add space between stat elements */
+}
+
+.stat {
+  flex: 1; /* Equal width for all stats */
+  text-align: center;
+}
+
+.stat i {
+  color: #3498db; /* Set icon color */
+  font-size: 28px; /* Adjust icon size */
+  margin-bottom: 5px; /* Add margin below the icon */
+}
+
+.stat-value {
+  color:  rgb(0, 6, 95);
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: #888;
+}
+
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .quick-stats {
+      flex-direction: column; /* Display stats in a column */
+      align-items: center; /* Center items vertically */
+  }
+
+  .stat {
+    margin: 10px; /* Add margin between stats */
+}
+}
+
+/*============== END QUICK STATS ====================*/
+
+
+
+
+
+
 .fade-in {
   opacity: 0;
 }
 
-
-.job-table {
-  background-color: white;
-  padding: 10px;
-  display: table;
-  width: 100%; /* Adjust the width to 100% for responsiveness */
-  margin: 0 auto; /* Center align the table */
-  max-width: 800px; /* Set a max-width to prevent the table from becoming too wide */
+.job-row {
+  display: flex;
+  justify-content: center; /* Center the boxes horizontally */
+  flex-wrap: wrap; /* Allow boxes to wrap to the next line */
+  margin-bottom: 10px; /* Add margin between rows */
 }
 
-.job-row {
-  display: table-row;
-  
+.job-box {
+  width: 43%; /* Set width of each box */
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 15px;
+  box-sizing: border-box; /* Include padding and border in the width */
+  padding: 15px;
 }
 
 .job-cell {
-  display: table-cell;
   padding: 10px;
-  border-bottom: 1px solid #ccc;
+}
+.job-cell a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color from parent */
+  transition: color 0.2s ease; /* Add transition for color change */
+}
+
+.job-cell a:hover {
+  color: #3498db; /* Change text color on hover */
 }
 
 .job-icon {
@@ -790,17 +887,31 @@ text-align: center; /* Horizontally center text */
 }
 
 .job-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-.company, .location, .salary {
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .job-box {
+      width: 100%; /* Set width to 100% for one box per row on smaller screens */
+  }
+}
+
+
+
+
+.company, .location, .salary, .attainment {
   font-size: 16px;
   color: #666;
   margin-bottom: 5px;
 }
-
+.salary1{
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+}
 .description {
   font-size: 16px;
   margin-bottom: 10px;
@@ -811,7 +922,20 @@ text-align: center; /* Horizontally center text */
 }
 
 .apply-button {
-  padding: 8px 15px;
+  padding: 5px 12px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.apply-button:hover {
+  background-color: #2980b9;
+}
+.apply-button2 {
+  padding: 15px 15px;
   background-color: #3498db;
   color: #fff;
   border: none;
@@ -820,6 +944,214 @@ text-align: center; /* Horizontally center text */
   font-size: 16px;
 }
 
-.apply-button:hover {
+.apply-button2:hover {
   background-color: #2980b9;
+}
+
+
+/* Base styles */
+.padding-container {
+  width: 80%; /* Adjust width as needed */
+  margin: 40px auto; /* Center the container and add margin to the top */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.padding-content {
+  margin: 30px auto;
+  display: flex; /* Use flexbox */
+  align-items: center; /* Align items vertically */
+  background-color: #fbfbfb; /* Just for visualization */
+  padding: 30px; /* Add padding to the content */
+  box-sizing: border-box; /* Include padding and border in the width */
+  box-shadow: 0px 0px 10px rgba(108, 108, 108, 0.3); /* Add shadow */
+}
+
+.image-container {
+  padding-right: 20px; /* Add spacing between the image and text */
+}
+
+.left-image {
+  width: 100px; /* Adjust image width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border: 1px solid #ccc; /* Add border to the image */
+}
+
+.job-info {
+  flex: 1; /* Allow the job info to take up remaining space */
+}
+
+.location-salary {
+  display: flex; /* Use flexbox */
+}
+
+.company {
+  margin-top: 10px;
+}
+
+.location,
+.salary, .attainment {
+  margin-top: 10px; /* Add margin between each element */
+}
+.salary1 {
+  margin-top: 10px; /* Add margin between each element */
+}
+
+
+.salary1, .attainment {
+  margin-left: 20px; /* Add space between location and salary */
+}
+
+.apply-button {
+  margin-right: 20px; /* Add margin to the right of the button */
+  padding: 15px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .padding-container {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+  
+  .padding-content {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .image-container {
+    padding-right: 0; /* Remove padding on smaller screens */
+    margin-bottom: 20px; /* Add margin to the bottom */
+    text-align: center; /* Center the image */
+  }
+
+  .apply-button {
+    display: inline-block; /* Hide the button on smaller screens */
+  }
+  
+  .job-info {
+    text-align: left; /* Align the text to the left */
+  }
+}
+.row-padding {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap into multiple rows */
+  justify-content: space-between; /* Adjust spacing between columns */
+  margin-top: 10px; /* Add margin to the top */
+}
+
+.column-padding,
+.column-padding2 {
+  box-shadow: 0px 0px 10px rgba(108, 108, 108, 0.3); /* Add shadow */
+  flex: 1; /* Make columns equal width initially */
+  padding: 20px 10px; /* Adjust padding as needed */
+  background-color: #fbfbfb; /* Just for visualization */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.column-padding h3, .column-padding2 h3 {
+  color: #2980b9;
+  flex: 1; /* Allow the h3 to take up remaining space */
+  padding: 0px 20px; /* Adjust padding as needed */
+}
+.column-padding h3::after {
+  content: '';
+  display: block;
+  width: 100%; /* Adjust the width of the underline */
+  height: 1px; /* Adjust the height of the underline */
+  background-color: #a7a7a7; /* Adjust the color of the underline */
+  margin-top: 5px; /* Adjust the spacing between the h3 and the underline */
+}
+
+.column-padding p, .column-padding2 p {
+  margin-top: 10px;
+  padding: 0px 20px; /* Adjust padding as needed */
+}
+
+.column-padding {
+  display: flex; /* Ensure the container is displayed as flex */
+  flex-direction: column; /* Stack elements vertically */
+  flex-basis: 66%; /* Initial width of the first padding */
+}
+
+.column-padding2 {
+  height: fit-content;
+  flex-basis: 32%; /* Initial width of the second padding */
+  margin-left: 20px; /* Add margin to separate the paddings */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .column-padding,
+  .column-padding2 {
+    flex-basis: 100%; /* Make each padding take full width on smaller screens */
+    margin-left: 0; /* Remove margin between paddings on smaller screens */
+    margin-top: 10px; /* Add margin to separate rows */
+  }
+}
+/* Media query for smaller screens */
+@media (max-width: 1136px) {
+  .column-padding2 {
+    flex-basis: 100%; /* Adjust width to take full width on smaller screens */
+    margin-left: 0; /* Remove margin on smaller screens */
+    margin-top: 10px; /* Add margin to separate rows */
+  }
+}
+.bullet-list {
+  padding: 20px;
+  line-height: 20px;
+}
+
+.bullet-list ul {
+  list-style-type: disc; /* Set bullet style */
+  margin-left: 20px; /* Add margin to align bullets */
+}
+
+.bullet-list li {
+  margin-bottom: 5px; /* Add spacing between list items */
+}
+
+
+
+
+
+/*============== JOBSEARCH BUTTONS ====================*/
+.job-info button {
+  /* Button styles */
+  padding: 5px 15px;
+  background-color: #babbbb;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+}
+
+.job-button {
+  padding: 8px 14px;
+  background-color: #babbbb;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .job-button {
+    margin-top: 5px;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  .job-info button {
+    display: block;
+    margin: 0 auto;
+}
+}
+
+@media screen and (max-width: 576px) {
+  .job-button {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+  .job-info button {
+    display: block;
+    margin: 0 auto;
+}
 }
