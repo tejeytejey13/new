@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+      
+
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+
+      
+     
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="assets/css/styles.css">
+      <link rel="stylesheet" href="assets/css/jobrequirement.css">
+
+ 
+      <title>Public Employment Service Office | PESO-Gensan</title>
+      <link rel="icon" href="peso/PESO LOGO NEW.png">
+   </head>
+<style>
+ 
+</style>
+   <body>
+    
+    
+    
+    
+    
+        <!-- Header and navigation content -->
+      <!--=============== HEADER ===============-->
+      <header class="header" id="header">
+        <nav class="nav container">
+           <div class="nav__data">
+               <a href="jobseeker.html" class="nav__logo">
+               <img src="peso/PESO LOGO NEW.png"  width="50px;"><h3>PESO JobPortal</h3>
+              </a>
+              
+              <div class="nav__toggle" id="nav-toggle">
+                 <i class="ri-menu-line nav__burger"></i>
+                 <i class="ri-close-line nav__close"></i>
+              </div>
+           </div>
+
+           <!--=============== NAV MENU ===============-->
+           <div class="nav__menu" id="nav-menu">
+              <ul class="nav__list">
+               <li><a href="jobseeker.html" class="nav__link">Home</a></li>
+
+               <li><a href="jobseeker_jobsearch.html" class="nav__link">Job Search</a></li>
+
+               <li><a href="jobseeker_applicant.html" class="nav__link" target="_blank">Dashboard</a></li>
+               <li><a href="jobseeker_requirements.html" class="nav__link" target="_blank">Profile</a></li>
+
+                <!--=============== DROPDOWN 1 ===============-->
+                <li class="dropdown__item">
+                 <div class="nav__link">
+                    User's Guide<i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                 </div>
+
+                 <ul class="dropdown__menu">
+                    <li>
+                       <a href="#" class="dropdown__link">
+                          <i class="ri-user-line"></i> Job&nbsp;Seekers
+                       </a>                          
+                    </li>
+
+                 </ul>
+              </li> 
+
+                <!--=============== DROPDOWN 2 ===============-->
+                <li class="dropdown__item">
+                   <div class="nav__link">
+                      Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                   </div>
+
+                   <ul class="dropdown__menu">
+                     
+                      <li>
+                         <a href="jobseeker_account.html" class="dropdown__link">
+                            <i class="ri-lock-line"></i> Accounts
+                         </a>
+                      </li>
+
+                      <li>
+                         <a href="index.html" class="dropdown__link">
+                           <i class="ri-logout-box-r-line"></i>Logout
+                         </a>
+                      </li>
+                   </ul>
+                </li> 
+                    
+          
+                 <li><a href="#" class="nav__link">About</a></li>
+                   <!-- Buttons added here -->
+                    <!-- <li><a href="login.html" target="_blank"><button class="nav__button">LOGIN</button></a></li>-->
+              </ul>
+           </div>
+        </nav>
+     </header>
+ 
+      <!-- ====================== START REQUIREMENTS =======================-->
+      <div class="requirementstitle">
+        <h2>Encode your personal profile</h2>
+      </div>
+      <div class="containerrequirements">
+        <div class="sidebar">
+            <a href="#" class="sidebar-item" data-target="applicantName">Applicant Name</a>
+            <a href="#" class="sidebar-item" data-target="personalInformation">Personal Information</a>
+            <a href="#" class="sidebar-item" data-target="employmentStatus">Employment Status</a>
+            <a href="#" class="sidebar-item" data-target="jobPreferences">Job Preferences</a>
+            <a href="#" class="sidebar-item" data-target="languageDialects">Language/Dialects</a>
+            <a href="#" class="sidebar-item" data-target="educationalBackground">Educational Background</a>
+            <a href="#" class="sidebar-item" data-target="certificationTraining">Certification/Training</a>
+            <a href="#" class="sidebar-item" data-target="eligibilityLicense">Eligibility/License</a>
+            <a href="#" class="sidebar-item" data-target="workExperience">Work Experience</a>
+            <a href="#" class="sidebar-item" data-target="otherSkills">Other Skills</a>
+            <a href="#" class="sidebar-item" data-target="certificationAuthorization">Certification/Authorization</a>
+        </div>
+        <div class="content" id="content">
+            <div id="applicantName" class="content-item">
+                <h2>APPLICANT NAME</h2>
+                <div class="form-field">
+                    <label for="last-name">LAST NAME</label>
+                    <input type="text" id="last-name" placeholder="Enter your last name" required>
+                  </div>
+                  
+                  <div class="form-field">
+                    <label for="first-name">FIRST NAME</label>
+                    <input type="text" id="first-name" placeholder="Enter your first name" required>
+                  </div>
+                  
+                  <div class="form-field">
+                    <label for="middle-name">MIDDLE NAME</label>
+                    <input type="text" id="middle-name" placeholder="Enter your middle name">
+                  </div>
+                  <div class="form-field">
+                    <label for="suffix">SUFFIX</label>
+                    <select id="suffix" required>
+                        <option value="">Select a suffix</option>
+                        <option value="Jr">Jr.</option>
+                        <option value="Sr">Sr</option>
+                        <option value="I">I</option>
+                        <option value="II">II</option>
+                        <option value="III">III</option>
+                        <option value="IV">IV</option>
+                        <option value="V">V</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                   </div>
+                   <div class="form-field">
+                    <label for="date-birth">DATE OF BIRTH</label>
+                    <div class="input-with-icon">
+                        <input type="text" id="date-birth" placeholder="Select date and time">
+                        <i class="far fa-calendar-alt icon"></i>
+                    </div>
+                   </div>
+                   <div class="form-field">
+                    <label for="sex">SEX</label>
+                    <select id="sex" required>
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                    </div>
+                    
+                    <div class="form-field">
+                        <input type="file" id="upload-image" accept="image/*" style="display: none;">
+                        <label for="upload-image" class="upload-label">UPLOAD IMAGE</label>
+                        <div class="input-with-icon" id="icon">
+                            <i class="far fa-image"></i>
+                        </div>
+                        <img id="uploaded-image" src="#" alt="Uploaded Image" style="display: none; max-width: 100%; margin-top: 10px;">
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="choose-file" class="file-button">
+                            Choose file
+                        </label>
+                        <input type="file" id="choose-file" accept="image/*" style="display: none;">
+                        <label class="file-button">
+                            Upload Photo
+                        </label>
+                        <input type="file" id="choose-file"  style="display: none;">
+                    </div>
+                    
+            </div>
+
+            <div id="personalInformation" class="content-item" style="display: none;">
+                <h2>Personal Information</h2>
+                <p>This section contains information about the applicant's personal details.</p>
+            </div>
+            <div id="employmentStatus" class="content-item" style="display: none;">
+                <h2>Employment Status</h2>
+                <p>This section contains information about the applicant's employment status.</p>
+            </div>
+            <div id="jobPreferences" class="content-item" style="display: none;">
+                <h2>Job Preferences</h2>
+                <p>This section contains information about the applicant's employment status.</p>
+            </div>
+            <div id="languageDialects" class="content-item" style="display: none;">
+                <h2>Language/Dialects</h2>
+                <p>This section contains information about the applicant's language and dialect proficiency.</p>
+            </div>
+            <div id="educationalBackground" class="content-item" style="display: none;">
+                <h2>Educational Background</h2>
+                <p>This section contains information about the applicant's educational history.</p>
+            </div>
+            <div id="certificationTraining" class="content-item" style="display: none;">
+                <h2>Certification/Training</h2>
+                <p>This section contains information about the applicant's certifications and training.</p>
+            </div>
+            <div id="eligibilityLicense" class="content-item" style="display: none;">
+                <h2>Eligibility/License</h2>
+                <p>This section contains information about the applicant's eligibility and licenses.</p>
+            </div>
+            <div id="workExperience" class="content-item" style="display: none;">
+                <h2>Work Experience</h2>
+                <p>This section contains information about the applicant's work experience.</p>
+            </div>
+            <div id="otherSkills" class="content-item" style="display: none;">
+                <h2>Other Skills</h2>
+                <p>This section contains information about the applicant's additional skills.</p>
+            </div>
+            <div id="certificationAuthorization" class="content-item" style="display: none;">
+                <h2>Certification/Authorization</h2>
+                <p>This section contains information about the applicant's certifications and authorizations.</p>
+            </div>
+        </div>
+    </div>
+     <!-- ====================== END REQUIREMENTS =======================-->
+        
+
+
+
+
+
+    <footer class="footer">
+        <div class="row">
+        <div class="column">
+            <h4>Job Seekers</h4>
+            <p><a href="#">Job Search</a></p>
+            <p><a href="#">Profile</a></p>
+            <p><a href="#">Recommended jobs</a></p>
+            <p><a href="#">Job Applications</a></p>            
+        </div>
+        <div class="column">
+            <h4>Employers</h4>
+            <p><a href="#">Register for free</a></p>
+            <p><a href="#">Post a Job ad</a></p>
+            <p><a href="#">Customer Service</a></p> 
+        </div>
+        <div class="column">
+            <h4>About PESO Gensan</h4>
+            <p><a href="#">About Us</a></p>
+            <p><a href="#">Partner Services</a></p>
+        </div>
+        <div class="column">
+            <h4>Contact</h4>
+            <p><a href="#">Help Centre</a></p>
+            <p><a href="#">Contact Us</a></p>
+        </div>
+        </div>
+        <div class="line"></div>
+        <div class="row">
+            <!-- Footer links and copyright text -->
+            <div class="footer-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms & Conditions</a>
+              <a href="#">Safe Job Search Guide</a>
+            </div>
+            <div class="copyright">
+              <p>Copyright &copy; 2024 PESO JobPortal</p>
+            </div>
+          </div>
+      </footer>
+      
+  
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+      <script>
+        $(function() {
+            $("#date-birth").datetimepicker({
+                format: 'Y-m-d H:i:s', // Date and time format
+                step: 15 // Time step (optional)
+            });
+        });
+
+
+
+            document.getElementById('choose-file').addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const image = document.getElementById('uploaded-image');
+                    image.src = e.target.result;
+                    image.style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // To adjust width and height, you can modify the style of the image element.
+        const uploadedImage = document.getElementById('uploaded-image');
+        uploadedImage.style.width = '200px'; // Set width to 200px
+        uploadedImage.style.height = 'auto'; // Automatically adjust height to maintain aspect ratio
+
+
+    </script>
+    
+    
+      <script>
+        // Get all sidebar items
+        const sidebarItems = document.querySelectorAll('.sidebar-item');
+
+        // Add click event listener to each sidebar item
+        sidebarItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const targetId = item.getAttribute('data-target');
+                const contentItems = document.querySelectorAll('.content-item');
+
+                // Hide all content items
+                contentItems.forEach(content => {
+                    content.style.display = 'none';
+                });
+
+                // Show the selected content item
+                const targetContent = document.getElementById(targetId);
+                targetContent.style.display = 'block';
+
+                // Remove 'active' class from all sidebar items
+                sidebarItems.forEach(sidebarItem => {
+                    sidebarItem.classList.remove('active');
+                });
+
+                // Add 'active' class to the clicked sidebar item
+                item.classList.add('active');
+            });
+        });
+      </script>
+
+
+   </body>
+</html>
